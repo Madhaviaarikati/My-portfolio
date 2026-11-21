@@ -1,5 +1,5 @@
 import { useState } from "react";
-import profileImage from "./assets/madhavi.jpg";
+import profileImage from "./assets/Madhavi.jpg";
 import aboutImage from "./assets/madhavi-about.jpg";
 import "./App.css";
 
