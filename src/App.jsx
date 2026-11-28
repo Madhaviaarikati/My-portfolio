@@ -1,6 +1,5 @@
 
-import profileImage from "./assets/Madhavi.jpg";
-import aboutImage from "./assets/madhavi-about.jpg";
+import profileImage from "./assets/Madhavi.png";
 import "./App.css";
 
 const sections = [
@@ -237,41 +236,94 @@ function App() {
         </section>
 
         {/* ABOUT */}
+        
+        {/* ABOUT */}
         <section className="section about-section" id="about">
-          <div className="section-heading">
-            <p className="eyebrow">ABOUT ME</p>
-            <h2>
-              A little about <span>my journey.</span>
-            </h2>
-          </div>
+          <div className="about-bg-orb about-bg-orb-one"></div>
+          <div className="about-bg-orb about-bg-orb-two"></div>
 
-          <div className="about-content">
-            <div className="about-text">
+          <div className="about-layout">
+            <div className="about-copy">
+              <p className="eyebrow">GET TO KNOW ME</p>
+
+              <h2>
+                Beyond the <span>resume.</span>
+                <br />
+                A mind that loves to learn.
+              </h2>
+
+              <div className="about-accent-line"></div>
+
               <p>
                 I'm Aarikati Venkata Madhavi, an Electronics and
                 Communication Engineering graduate with experience
                 in AI/LLM data operations and academic teaching.
               </p>
+
               <p>
-                My professional journey has helped me develop skills
-                in data annotation, AI model evaluation, structured
-                data review, robotics-related workflows, and
-                quality-focused processes.
+                From evaluating AI-generated responses to exploring
+                robotics-related workflows, I've enjoyed working
+                with technology, solving problems, and learning
+                something new with every experience.
               </p>
+
               <p>
-                Along with my experience in the AI domain, I have
-                teaching experience in programming and computer
-                science subjects. I enjoy learning new technologies
-                and improving my skills through practical experience.
+                I believe growth comes from curiosity, consistency,
+                and the courage to explore beyond what we already know.
               </p>
-              <a href="#education" className="text-link">
-                Explore my education →
+
+              <a href="#education" className="about-journey-link">
+                EXPLORE MY JOURNEY <span>↗</span>
               </a>
             </div>
 
-            <div className="about-image">
-              <img src={aboutImage} alt="Venkata Madhavi" />
+            <div className="about-art">
+              <div className="about-art-label label-top">
+                <span className="label-dot"></span>
+                CURIOUS MIND · CREATIVE THINKING
+              </div>
+
+              <div className="about-orbit orbit-large"></div>
+              <div className="about-orbit orbit-medium"></div>
+              <div className="about-orbit orbit-small"></div>
+
+              <div className="about-center">
+                <div className="about-center-inner">
+                  <span className="about-sparkle">✦</span>
+                  <span className="about-center-title">GROW</span>
+                  <span className="about-center-sub">LEARN · BUILD · EVOLVE</span>
+                </div>
+              </div>
+
+              <div className="about-float about-float-ai">
+                <span className="float-icon">✧</span>
+                <span>AI & TECHNOLOGY</span>
+              </div>
+
+              <div className="about-float about-float-code">
+                <span className="float-icon">&lt;/&gt;</span>
+                <span>LOGIC & CODE</span>
+              </div>
+
+              <div className="about-float about-float-idea">
+                <span className="float-icon">✳</span>
+                <span>NEW IDEAS</span>
+              </div>
+
+              <div className="about-float about-float-learn">
+                <span className="float-icon">↗</span>
+                <span>ALWAYS LEARNING</span>
+              </div>
+
+              <div className="about-art-label label-bottom">
+                A JOURNEY OF CONTINUOUS GROWTH
+              </div>
             </div>
+          </div>
+
+          <div className="about-bottom-note">
+            <span>01 / ABOUT</span>
+            <span>CURIOUS BY NATURE <b>✦</b></span>
           </div>
         </section>
 

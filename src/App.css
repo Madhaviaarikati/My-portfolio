@@ -346,38 +346,31 @@ button {
   line-height: 1.95;
   margin-bottom: 20px;
 }
-
-.about-image {
-  height: 370px;
-  max-width: 350px;
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  padding: 80px 10%;
+  box-sizing: border-box;
 }
 
-.about-image img {
+.about-content {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.about-image:hover img {
-  transform: scale(1.05);
+.about-content h2 {
+  text-align: center;
+  color: #c5a3ff;
 }
 
-.text-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: var(--lavender);
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.text-link:hover {
-  color: white;
+.about-content p {
+  text-align: center;
+  line-height: 1.8;
+  color: #e0d9eb;
 }
 
 /* EDUCATION */
@@ -1640,5 +1633,431 @@ body,
 
   .skills-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== ABOUT: FULL-SCREEN VISUAL REDESIGN ===== */
+
+.about-section {
+  min-height: calc(100vh - 76px) !important;
+  min-height: calc(100svh - 76px) !important;
+  height: calc(100svh - 76px) !important;
+  padding: 55px 8% 35px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 75% 48%, rgba(128, 83, 190, .15), transparent 42%),
+    linear-gradient(120deg, #09080f, #100d19 55%, #0b0912);
+}
+
+.about-layout {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-copy {
+  max-width: 570px;
+  animation: aboutReveal 1s ease both;
+}
+
+.about-copy .eyebrow {
+  margin-bottom: 22px;
+}
+
+.about-copy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.3vw, 61px);
+  line-height: 1.16;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.about-copy h2 span {
+  color: #bd9cff;
+  font-style: italic;
+}
+
+.about-accent-line {
+  width: 75px;
+  height: 3px;
+  background: linear-gradient(90deg, #bd9cff, transparent);
+  margin-bottom: 28px;
+}
+
+.about-copy > p:not(.eyebrow) {
+  color: #c5bed2;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.about-journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding-bottom: 9px;
+  color: #d9c7ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(189,156,255,.55);
+  transition: .3s ease;
+}
+
+.about-journey-link span {
+  font-size: 19px;
+}
+
+.about-journey-link:hover {
+  color: white;
+  gap: 25px;
+}
+
+/* Illustration area */
+
+.about-art {
+  min-height: 520px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: aboutReveal 1.2s ease both;
+}
+
+.about-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.about-bg-orb-one {
+  width: 420px;
+  height: 420px;
+  top: 5%;
+  right: -12%;
+  background: radial-gradient(circle, rgba(155,110,220,.10), transparent 70%);
+}
+
+.about-bg-orb-two {
+  width: 300px;
+  height: 300px;
+  bottom: -15%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(189,156,255,.08), transparent 70%);
+}
+
+.about-orbit {
+  position: absolute;
+  border: 1px solid rgba(189,156,255,.24);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-large {
+  width: 440px;
+  height: 440px;
+  animation: orbitRotate 28s linear infinite;
+}
+
+.orbit-medium {
+  width: 340px;
+  height: 340px;
+  border-style: dashed;
+  animation: orbitRotate 22s linear infinite reverse;
+}
+
+.orbit-small {
+  width: 230px;
+  height: 230px;
+  border-color: rgba(189,156,255,.35);
+  box-shadow: 0 0 45px rgba(157,112,225,.10);
+  animation: orbitPulse 4s ease-in-out infinite;
+}
+
+.about-center {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 35% 30%, #3b2858, #171022 72%);
+  border: 1px solid rgba(213,190,255,.6);
+  box-shadow:
+    0 0 35px rgba(169,126,238,.25),
+    inset 0 0 30px rgba(189,156,255,.12);
+  z-index: 2;
+  animation: centerFloat 5s ease-in-out infinite;
+}
+
+.about-center-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.about-sparkle {
+  font-size: 30px;
+  color: #e4d5ff;
+}
+
+.about-center-title {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.about-center-sub {
+  color: #c7b1eb;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.about-float {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border: 1px solid rgba(189,156,255,.28);
+  border-radius: 12px;
+  background: rgba(23,17,34,.88);
+  color: #e7dcfa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+  backdrop-filter: blur(12px);
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.float-icon {
+  color: #c7a8ff;
+  font-size: 21px;
+}
+
+.about-float-ai {
+  top: 17%;
+  left: 3%;
+}
+
+.about-float-code {
+  top: 25%;
+  right: 0;
+  animation-delay: -1s;
+}
+
+.about-float-idea {
+  bottom: 22%;
+  left: 0;
+  animation-delay: -2s;
+}
+
+.about-float-learn {
+  bottom: 15%;
+  right: 2%;
+  animation-delay: -3s;
+}
+
+.about-art-label {
+  position: absolute;
+  color: #a99bbd;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.label-top {
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.label-top::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bd9cff;
+  margin-right: 9px;
+  box-shadow: 0 0 12px #bd9cff;
+}
+
+.label-bottom {
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.about-bottom-note {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  color: #8d829f;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.about-bottom-note b {
+  color: #bd9cff;
+  margin-left: 8px;
+}
+
+@keyframes aboutReveal {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbitRotate {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@keyframes orbitPulse {
+  0%, 100% { scale: 1; opacity: .7; }
+  50% { scale: 1.07; opacity: 1; }
+}
+
+@keyframes centerFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .about-section {
+    height: auto !important;
+    min-height: calc(100svh - 76px) !important;
+    padding: 65px 6% 55px !important;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .about-art {
+    transform: scale(.85);
+  }
+
+  .about-copy h2 {
+    font-size: 42px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+  .about-section {
+    height: auto !important;
+    min-height: calc(100svh - 115px) !important;
+    padding: 65px 7% 75px !important;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .about-copy {
+    text-align: center;
+    margin: auto;
+  }
+
+  .about-copy h2 {
+    font-size: 39px;
+  }
+
+  .about-accent-line {
+    margin: 0 auto 25px;
+  }
+
+  .about-copy > p:not(.eyebrow) {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .about-art {
+    min-height: 390px;
+    transform: scale(.82);
+    margin: -10px 0;
+  }
+
+  .orbit-large {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-medium {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-small {
+    width: 190px;
+    height: 190px;
+  }
+
+  .about-center {
+    width: 155px;
+    height: 155px;
+  }
+
+  .about-float {
+    font-size: 8px;
+    padding: 10px;
+  }
+
+  .label-top {
+    top: 0;
+  }
+
+  .label-bottom {
+    bottom: 0;
+  }
+
+  .about-bottom-note {
+    left: 7%;
+    right: 7%;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-art {
+    transform: scale(.70);
+    margin: -35px -25px;
+  }
+
+  .about-copy h2 {
+    font-size: 34px;
   }
 }
